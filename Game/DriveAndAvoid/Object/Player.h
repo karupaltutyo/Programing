@@ -39,6 +39,6 @@ public:
 
 private:
 	void Movement();            //ˆÚ“®ˆ—
-	void Accelertion();         //‰Á‘¬ˆ—
+	void Acceleration();         //‰Á‘¬ˆ—
 
 };
