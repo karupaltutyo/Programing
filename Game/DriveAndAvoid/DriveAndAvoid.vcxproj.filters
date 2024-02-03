@@ -39,7 +39,7 @@
     <ClCompile Include="Scene\RankingDispScene.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\RankinglnputScene.cpp">
+    <ClCompile Include="Scene\RankingInputScene.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Scene\ResultScene.cpp">
@@ -77,7 +77,7 @@
     <ClInclude Include="Scene\RankingDispScene.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\RankinglnputScene.h">
+    <ClInclude Include="Scene\RankingInputScene.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Scene\ResultScene.h">

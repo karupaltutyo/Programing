@@ -10,7 +10,7 @@ public:
 	RankingData();
 	~RankingData();
 
-	void Initalize();   //‰Šúˆ—
+	void Initialize();   //‰Šúˆ—
 	void Finalize();//I—¹ˆ—
 
 public:
