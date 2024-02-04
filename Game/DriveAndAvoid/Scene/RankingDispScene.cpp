@@ -50,6 +50,8 @@ void RankingDispScene::Draw() const
 	{
 		DrawFormatString(50, 170 + i * 25, 0xffffff, "%2d %-15s %6d", ranking->GetRank(i), ranking->GetName(i), ranking->GetScore(i));
 	}
+}
+
 
 	//終了時処理
 	void RankingDispScene::Finalize()
@@ -59,5 +61,11 @@ void RankingDispScene::Draw() const
 
 		//動的メモリの解放
 		ranking->Finalize();
+		delete ranking;
 	}
-}
+
+	//現在のシーン情報を取得
+	eSceneType RankingDispScene::GetNowScene() const
+	{
+		return eSceneType::E_RANKING_DISP;
+	}
