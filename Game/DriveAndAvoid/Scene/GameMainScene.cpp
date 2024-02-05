@@ -191,4 +191,4 @@ void GameMainScene::Finalize()
 	{
 		throw("Resource/dat/result_data.csv‚ªŠJ‚¯‚Ü‚¹‚ñ\n");
 	}
-}
+}a
