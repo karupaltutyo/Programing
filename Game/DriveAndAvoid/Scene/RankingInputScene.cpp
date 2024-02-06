@@ -27,6 +27,9 @@ RankingInputScene::RankingInputScene() :background_image(NULL), ranking(nullptr)
 		//メモリの動的確保
 		ranking = new RankingData;
 		ranking->Initialize();
+
+		//リザルトデータを取得する
+		FILE* fp = nullptr;
 		//ファイルオープン
 		errno_t result= fopen_s(&fp, "Resource/dat/result_data.csv", "r");
 

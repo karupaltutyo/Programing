@@ -128,7 +128,7 @@ void Player::DecreaseHp(float value)
 //位置情報取得処理
 Vector2D Player::GetLocation()const
 {
-	return this - location;
+	return this -> location;
 }
 
 //当たり判定の大きさ取得処理
@@ -212,7 +212,7 @@ void Player::Acceleration()
 	}
 
 	//RBボタンが押されたら、加速する
-	if (InputControl::GetBUttonDown(XINPUT_BUTTON_RIGHT_SHOULDER) && speed < 10.0f)
+	if (InputControl::GetButtonDown(XINPUT_BUTTON_RIGHT_SHOULDER) && speed < 10.0f)
 	{
 		speed += 1.0f;
 	}

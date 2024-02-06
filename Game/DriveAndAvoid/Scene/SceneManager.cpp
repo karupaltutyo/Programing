@@ -124,7 +124,7 @@ void SceneManager::Draw() const
 }
 
 //シーン切り替え処理
-void SceneManager::ChangeScene(eScene Type scene_type)
+void SceneManager::ChangeScene(eSceneType scene_type)
 {
 	//シーンを生成する(SceneBaseが継承されているか？）
 	SceneBase* new_scene = dynamic_cast<SceneBase*>(CreateScene(scene_type));
@@ -142,6 +142,12 @@ void SceneManager::ChangeScene(eScene Type scene_type)
 		delete current_scene;
 	}
 
+	//新しく生成したシーンの初期化を行う
+	new_scene->Initialize();
+
+	//現在のシーンの更新
+	current_scene = new_scene;
+}
 	//シーン生産処理
 	SceneBase* SceneManager::CreateScene(eSceneType scene_type)
 
@@ -154,7 +160,7 @@ void SceneManager::ChangeScene(eScene Type scene_type)
 			return new TitleScene;
 		case eSceneType::E_MAIN:
 			return new GameMainScene;
-		case eScene Type::E_RESULT:
+		case eSceneType::E_RESULT:
 			return new ResultScene;
 		case eSceneType::E_HELP:
 			return new HelpScene;
@@ -166,4 +172,3 @@ void SceneManager::ChangeScene(eScene Type scene_type)
 			return nullptr;
 		}
 	}
-}

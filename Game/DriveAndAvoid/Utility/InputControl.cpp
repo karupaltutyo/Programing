@@ -68,6 +68,12 @@ bool InputControl::GetButton(int button)
 	return CheckButtonRange(button) && (now_button[button] && old_button[button]);
 }
 
+//ボタン取得：押した瞬間
+bool InputControl::GetButtonDown(int button)
+{
+	return CheckButtonRange(button) && (now_button[button] && !old_button[button]);
+}
+
 //ボタン取得：離した瞬間
 bool InputControl::GetButtonUp(int button)
 {
@@ -99,7 +105,7 @@ Vector2D InputControl::GetRightStick()
 }
 
 //ボタン配列範囲チェック
-bool InputCntrolCheckButtonRange(int button)
+bool InputControl::CheckButtonRange(int button)
 {
 	return(0 <= button && button < 16);
 }

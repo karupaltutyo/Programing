@@ -65,13 +65,13 @@ eSceneType TitleScene::Update()
 	{
 		switch (menu_cursor)
 		{
-		case0:
+		case 0:
 			return eSceneType::E_RANKING_DISP;
 
-		case1:
+		case 1:
 			return eSceneType::E_RANKING_DISP;
 
-		case2:
+		case 2:
 			return eSceneType::E_HELP;
 
 		default:
@@ -108,5 +108,5 @@ void TitleScene::Finalize()
 //Œ»İ‚ÌƒV[ƒ“î•ñ‚ğæ“¾
 eSceneType TitleScene::GetNowScene()const
 {
-	return eSceneType::TITLE;
+	return eSceneType::E_TITLE;
 }
