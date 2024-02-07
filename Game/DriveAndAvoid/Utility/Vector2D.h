@@ -1,6 +1,6 @@
 #pragma once
 
-//２次元ベクトルくらす
+//２次元ベクトルクラス
 class Vector2D
 {
 public:
@@ -97,6 +97,13 @@ public:
 	{
 		this->x -= location.x;
 		this->y -= location.y;
+
+		return*this;
+	}
+	Vector2D& operator*=(const float& scalar)
+	{
+		this->x *= scalar;
+		this->y *= scalar;
 
 		return*this;
 	}

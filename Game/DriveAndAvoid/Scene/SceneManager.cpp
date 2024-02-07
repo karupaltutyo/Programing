@@ -9,7 +9,7 @@
 #include "RankingDispScene.h"
 #include "RankingInputScene.h"
 
-SceneManager::SceneManager() :current_scene(nullptr)
+SceneManager::SceneManager() : current_scene(nullptr)
 {
 
 }

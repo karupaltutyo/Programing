@@ -20,7 +20,10 @@ GameMainScene::~GameMainScene()
 //‰Šú‰»ˆ—
 void GameMainScene::Initialize()
 {
+
 	//‚“¾“_’l‚ğ“Ç‚İ‚İ
+	ReadHighScore();
+
 	back_ground = LoadGraph("Resource/images/back.bmp");
 	barrier_image = LoadGraph("Resource/images/barrier.png");
 	int result = LoadDivGraph("Resource/images/car.bmp", 3, 3, 1, 63, 120, enemy_image);

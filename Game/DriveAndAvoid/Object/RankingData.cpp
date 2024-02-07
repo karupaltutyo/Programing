@@ -66,6 +66,12 @@ void RankingData::SetRankingData(int score, char* name)
 }
 
 //スコア取得処理
+int RankingData::GetScore(int value) const
+{
+	return score[value];
+}
+
+//ランク取得処理
 int RankingData::GetRank(int value) const
 {
 	return rank[value];
