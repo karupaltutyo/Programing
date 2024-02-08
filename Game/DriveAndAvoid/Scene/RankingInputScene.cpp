@@ -83,6 +83,8 @@ RankingInputScene::RankingInputScene() :background_image(NULL), ranking(nullptr)
 		{
 			int x = (i % 13) * font_size + 15;
 			int y = (i / 13) * font_size + 300;
+			DrawFormatString(x, y, GetColor(255, 255, 255), "%-3c", 'a' + i);
+			y = ((i / 13) + 2) * font_size + 300;
 			DrawFormatString(x, y, GetColor(255, 255, 255), "%-3c", 'A' + i);
 		}
 		DrawString(40, 405, "Œˆ’è", GetColor(255, 255, 255));
@@ -93,13 +95,17 @@ RankingInputScene::RankingInputScene() :background_image(NULL), ranking(nullptr)
 		{
 			int x = cursor_x * font_size + 10;
 			int y = cursor_y * font_size + 295;
-			DrawBox(x, y, x + font_size, +font_size, GetColor(255, 255, 255), FALSE);
+			DrawBox(x, y, x + font_size, y+font_size, GetColor(255, 255, 255), FALSE);
 		}
 		else
 		{
 			if (cursor_x == 0)
 			{
 				DrawBox(35, 400, 35 + font_size * 2, 400 + font_size, GetColor(255, 255, 255), FALSE);
+			}
+			else
+			{
+				DrawBox(85, 400,85+ font_size*2, 400+font_size, GetColor(255, 255, 255), FALSE);
 			}
 		}
 	}
@@ -151,7 +157,7 @@ RankingInputScene::RankingInputScene() :background_image(NULL), ranking(nullptr)
 		}
 		if (InputControl::GetButtonDown(XINPUT_BUTTON_DPAD_UP))
 		{
-			if (cursor_y < 0)
+			if (cursor_y > 0)
 			{
 				cursor_y--;
 			}
@@ -189,11 +195,19 @@ RankingInputScene::RankingInputScene() :background_image(NULL), ranking(nullptr)
 					cursor_x = 0;
 					cursor_y = 4;
 				}
+			}
 			else
 			{
-				name[name_num--] = NULL;
+				if (cursor_x == 0)
+				{
+					name[name_num] = '\0';
+					return true;
+				}
+				{
+					name[--name_num] = NULL;
+				}
 			}
 		}
+			return false;
 	}
-	return false;
-}
+	

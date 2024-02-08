@@ -6,6 +6,7 @@ Player::Player() :is_active(false), image(NULL), location(0.0f), box_size(0.0f),
 
 barrier(nullptr)
 {
+
 }
 
 Player::~Player()
@@ -21,7 +22,7 @@ void Player::Initialize()
 	angle = 0.0f;
 	speed = 3.0f;
 	hp = 1000;
-	fuel = 20000;
+	fuel = 100;
 	barrier_count = 3;
 
 	//‰æ‘œ‚Ì“Ç‚İ‚İ

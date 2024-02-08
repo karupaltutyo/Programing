@@ -170,7 +170,7 @@ void GameMainScene::Draw() const
 	fx = 510.0f;
 	fy = 430.0f;
 	DrawFormatStringF(fx, fy, GetColor(0, 0, 0), "PLAYER HP");
-	DrawBoxAA(fx, fy + 2.0f, fx + (player->GetHp() * 100 / 1000), fy + 40.0f, GetColor(255, 0, 0), TRUE);
+	DrawBoxAA(fx, fy + 20.0f, fx + (player->GetHp() * 100 / 1000), fy + 40.0f, GetColor(255, 0, 0), TRUE);
 	DrawBoxAA(fx, fy + 20.0f, fx + 100.0f, fy + 40.0f, GetColor(0, 0, 0), FALSE);
 }
 
@@ -181,7 +181,7 @@ void GameMainScene::Finalize()
 	int score = (mileage / 10 * 10);
 	for (int i = 0; i < 3; i++)
 	{
-		score += (i + i) * 50 * enemy_count[i];
+		score += (i + 1) * 50 * enemy_count[i];
 	}
 
 	//リザルトデータの書き込み
@@ -246,6 +246,12 @@ bool GameMainScene::IsHitCheck(Player* p, Enemy* e)
 {
 	//プレイヤーがバリアを張っていたら、あたり判定を無視する
 	if (p->IsBarrier())
+	{
+		return false;
+	}
+
+	//敵情報がなければ、当たり判定を無視する
+	if (e == nullptr)
 	{
 		return false;
 	}

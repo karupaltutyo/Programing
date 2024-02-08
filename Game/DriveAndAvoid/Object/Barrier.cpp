@@ -1,15 +1,15 @@
 #include "Barrier.h"
 #include "DxLib.h"
 
-Barrier::Barrier() :image(NULL), life_span(1000)
+Barrier::Barrier() : image(NULL),life_span(1000)
 {
 	//画像の読み込み
-	image = LoadGraph("Resource/images/barriere.png");
+	image = LoadGraph("Resource/images/barrier.png");
 
 	//エラーチェック
 	if (image == -1)
 	{
-		throw("Resource/images/barrier/pngがありません\n");
+		throw("Resource/images/barrier.pngがありません\n");
 	}
 }
 
@@ -29,6 +29,6 @@ void Barrier::Draw(const Vector2D& location)
 //寿命が尽きたか？
 bool Barrier::IsFinished(float speed)
 {
-	life_span = speed;
+	life_span -= speed;
 	return(life_span <= 0);
 }
